@@ -1,12 +1,20 @@
 //your code here
+
+
+let mp={};
 let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
-	touristSpots.sort((a,b)=>{
-		if(a>b){
-return 1
-		}else if(a<b){
-			return -1;
-			
-		}
-		return 0;
-	});
-console.log(touristSpots);
+	let articlelessarray=[];
+	let articlelessitem=[];
+fot(let i =0;i<touristSpots.length;i++){
+	articlelessitem=touristSpots[i].replace(/\bthe\b|\ban\b|\ba\b/gi,"").trim();
+	articlelessarray.push(articlelessitem);
+	mp[articlelessitem]=touristSpots[i];
+	
+
+}
+articlelessarray.sort();
+let ans=[];
+for(let i of articlelessarray()){
+	ans.push(mp[i]);
+}
+console.log(ans);
